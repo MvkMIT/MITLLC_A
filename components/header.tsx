@@ -15,7 +15,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             
-            <span className="font-serif text-foreground text-2xl font-normal">Maganti Group</span>
+            <span className="font-serif text-foreground text-2xl font-normal">Maganti Group LLC</span>
           </Link>
 
           {/* Desktop Navigation */}

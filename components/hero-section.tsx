@@ -74,13 +74,13 @@ export function HeroSection() {
         <div className="max-w-2xl">
           {/* Text content */}
           <p className="reveal opacity-0 text-sm uppercase tracking-[0.2em] text-background font-medium mb-6">
-            IT Consulting Excellence
+            Welcome to Maganti Group
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.1] text-background text-balance mb-8">
-            <AnimatedText text="Information" delay={0.2} />
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.1] text-background text-balance mb-8 whitespace-nowrap">
+            <span className="inline"><AnimatedText text="Information Technology" delay={0.2} /></span>
             <br />
-            <span className="text-accent">
-              <AnimatedText text="Technology" delay={0.6} />
+            <span className="text-accent inline">
+              <AnimatedText text="Consulting" delay={0.6} />
             </span>
           </h1>
           <p className="reveal opacity-0 animation-delay-400 text-lg text-background/90 leading-relaxed mb-10 md:text-base mr-0 pr-0">
