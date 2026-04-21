@@ -2,10 +2,9 @@ import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { IndustriesSection } from "@/components/industries-section"
-import { TalentSolutionsSection } from "@/components/talent-solutions-section"
-import { ProductSection } from "@/components/product-section"
 import { ScienceSection } from "@/components/science-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { ContactSection } from "@/components/contact-section"
 import { MissionSection } from "@/components/mission-section"
 import { Footer } from "@/components/footer"
 
@@ -16,11 +15,10 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <IndustriesSection />
-      <TalentSolutionsSection />
-      <ProductSection />
+      <MissionSection />
       <ScienceSection />
       <TestimonialsSection />
-      <MissionSection />
+      <ContactSection />
       <Footer />
     </main>
   )

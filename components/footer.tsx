@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, Facebook, Linkedin } from "lucide-react"
 
 const footerLinks = {
   produits: [
@@ -97,17 +97,37 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/50">© 2024 Maganti Group. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-background/50">
-            <Link href="#" className="hover:text-background transition-colors">
-              Legal notice
-            </Link>
-            <Link href="#" className="hover:text-background transition-colors">
-              Privacy policy
-            </Link>
-            <Link href="#" className="hover:text-background transition-colors">
-              Terms of sale
-            </Link>
+          <p className="text-sm text-background/50">
+            © Copyright 2026 All Rights Reserved. The Maganti Group is proud to be an Equal Opportunities / Affirmative Action Employer.
+          </p>
+          <div className="flex items-center gap-6">
+            <div className="flex gap-6 text-sm text-background/50">
+              <Link href="#" className="hover:text-background transition-colors">
+                Terms of Use
+              </Link>
+              <span className="text-background/30">|</span>
+              <Link href="#" className="hover:text-background transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
+            <div className="flex gap-3 ml-4">
+              <Link
+                href="https://www.facebook.com/Maganti-Group-LLC-1720121608231717/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </Link>
+              <Link
+                href="https://linkedin.com/in/maganti-group-llc-we-serve-you-grow-96ba561a2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

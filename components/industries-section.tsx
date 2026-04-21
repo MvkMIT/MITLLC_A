@@ -71,7 +71,7 @@ export function IndustriesSection() {
           alt="City skyline"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-foreground/80" />
+        <div className="absolute inset-0 bg-foreground/85" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -98,9 +98,9 @@ export function IndustriesSection() {
               key={industry.number}
               className={`reveal opacity-0 ${index === 0 ? "" : index === 1 ? "animation-delay-100" : index === 2 ? "animation-delay-200" : index === 3 ? "animation-delay-300" : index === 4 ? "animation-delay-400" : "animation-delay-500"} relative group`}
             >
-              <div className="bg-background rounded-xl p-6 flex items-center gap-4 relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="bg-background/95 backdrop-blur-sm rounded-xl p-6 flex items-center gap-4 relative overflow-hidden border border-background/20 shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 group">
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                   <industry.icon className="w-5 h-5 text-primary" />
                 </div>
 
@@ -110,7 +110,7 @@ export function IndustriesSection() {
                 </h3>
 
                 {/* Background Number */}
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-6xl font-bold text-muted/30 select-none">
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-6xl font-bold text-muted/20 select-none group-hover:text-primary/10 transition-colors">
                   {industry.number}
                 </span>
               </div>

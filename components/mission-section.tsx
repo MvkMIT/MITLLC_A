@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { ScrollBlurText } from "@/components/scroll-blur-text"
 
 export function MissionSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -30,41 +31,39 @@ export function MissionSection() {
       <div className="relative max-w-7xl mx-auto rounded-[48px] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src="/images/mission-background.png" alt="Nature background" className="w-full h-full object-cover" />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-foreground/50" />
+          <img src="/TECH_SOFTWARES.png" alt="Technology background" className="w-full h-full object-cover" />
 
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-background/0 to-transparent backdrop-blur-[2px]" />
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-background/0 to-transparent backdrop-blur-[8px] opacity-60" />
-          <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-background/0 to-transparent backdrop-blur-[20px] opacity-30" />
+          {/* Black shade on left side for text readability */}
+          <div className="absolute inset-y-0 left-0 w-full lg:w-2/3 bg-gradient-to-r from-foreground via-foreground/90 to-transparent" />
         </div>
 
-        {/* Content with padding */}
-        <div className="relative px-6 lg:px-8 py-16 lg:py-10">
+        {/* Content */}
+        <div className="relative px-8 lg:px-16 py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image - removed as we now have background */}
-            <div className="reveal opacity-0 order-2 lg:order-1"></div>
-
-            {/* Content */}
-            <div className="order-1 lg:order-2">
-              <p className="reveal opacity-0 text-sm uppercase tracking-[0.2em] text-accent font-medium mb-4">
+            {/* Left - Content */}
+            <div>
+              <p className="reveal opacity-0 text-xs uppercase tracking-[0.3em] text-background/60 font-medium mb-4">
                 About Us
               </p>
-              <h2 className="reveal opacity-0 animation-delay-200 font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-background text-balance mb-8">
-                Transforming Businesses Through Technology
-              </h2>
-              <div className="reveal opacity-0 animation-delay-400 space-y-6 text-background/90 leading-relaxed">
+              <ScrollBlurText
+                text="Transforming Businesses Through Technology"
+                className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-background text-balance mb-6"
+              />
+              {/* Red accent line */}
+              <div className="reveal opacity-0 animation-delay-200 w-12 h-0.5 bg-red-500 mb-8" />
+
+              <div className="reveal opacity-0 animation-delay-300 space-y-6 text-background/80 leading-relaxed">
                 <p>
-                  Maganti Group, LLC is a premier technology consulting service provider, specialized in talent acquisition 
-                  and staff augmentation services to businesses across the globe. With presence in Connecticut, USA and India, 
+                  Maganti Group, LLC is a premier technology consulting service provider, specialized in talent acquisition
+                  and staff augmentation services to businesses across the globe. With presence in Connecticut, USA and India,
                   we deliver excellence that drives digital transformation.
                 </p>
                 <p>
-                  We believe in providing the best services to our clients and employees. Our team of dedicated professionals 
+                  We believe in providing the best services to our clients and employees. Our team of dedicated professionals
                   is passionate about technology and innovation, committed to achieving excellence in everything we do.
                 </p>
               </div>
-              <div className="reveal opacity-0 animation-delay-600 mt-10">
+              <div className="reveal opacity-0 animation-delay-500 mt-10">
                 <Button
                   size="lg"
                   className="bg-background text-foreground hover:bg-background/90 rounded-full px-8 group"
@@ -74,6 +73,9 @@ export function MissionSection() {
                 </Button>
               </div>
             </div>
+
+            {/* Right - Empty for image visibility */}
+            <div className="hidden lg:block" />
           </div>
         </div>
       </div>

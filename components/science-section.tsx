@@ -87,18 +87,30 @@ export function ScienceSection() {
   }
 
   return (
-    <section ref={sectionRef} id="science" className="py-24 lg:py-32 bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section ref={sectionRef} id="science" className="py-24 lg:py-32 relative overflow-hidden">
+      {/* Background Image with overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
+          alt="Technology background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-primary/90" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <p className="reveal opacity-0 text-sm uppercase tracking-[0.2em] text-primary-foreground/70 font-medium mb-4">
+          <p className="reveal opacity-0 text-xs uppercase tracking-[0.3em] text-primary-foreground/60 font-medium mb-4">
             Our Approach
           </p>
           <ScrollBlurText
             text="Excellence in every engagement"
-            className="font-serif text-3xl md:text-4xl text-primary-foreground text-balance mb-6 lg:text-7xl font-light"
+            className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-primary-foreground text-balance mb-6"
           />
-          <p className="reveal opacity-0 animation-delay-400 text-lg text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed">
+          {/* Red accent line */}
+          <div className="reveal opacity-0 animation-delay-200 w-12 h-0.5 bg-red-500 mx-auto mt-6" />
+          <p className="reveal opacity-0 animation-delay-300 text-lg text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed mt-6">
             We combine industry expertise with innovative solutions to deliver measurable results for our clients.
           </p>
         </div>
@@ -107,7 +119,7 @@ export function ScienceSection() {
         <div className="reveal opacity-0 animation-delay-400 grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="w-14 h-14 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+              <div className="w-14 h-14 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-foreground/20 transition-colors">
                 <stat.icon className="w-6 h-6 text-primary-foreground" />
               </div>
               <div className="font-serif text-4xl md:text-5xl font-medium text-primary-foreground mb-2">
@@ -125,7 +137,7 @@ export function ScienceSection() {
               key={principle.number}
               className={`reveal opacity-0 ${index === 1 ? "animation-delay-200" : index === 2 ? "animation-delay-400" : ""}`}
             >
-              <div className="border-t border-primary-foreground/20 pt-8">
+              <div className="bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 rounded-xl p-8 hover:bg-primary-foreground/10 transition-colors">
                 <span className="text-sm font-medium text-primary-foreground/50 mb-4 block">{principle.number}</span>
                 <h3 className="font-serif text-xl md:text-2xl font-medium text-primary-foreground mb-4">
                   {principle.title}

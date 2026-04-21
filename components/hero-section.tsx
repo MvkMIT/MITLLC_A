@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Facebook, Linkedin } from "lucide-react"
 import { AnimatedText } from "@/components/animated-text"
+import Link from "next/link"
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
-  const imageContainerRef = useRef<HTMLDivElement>(null)
+  const videoContainerRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
@@ -51,22 +52,26 @@ export function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Full-width background image with zoom effect */}
+      {/* Full-width background video with zoom effect */}
       <div
-        ref={imageContainerRef}
+        ref={videoContainerRef}
         className="absolute inset-0 w-full h-full overflow-hidden transition-transform duration-100"
         style={{
           transform: `scale(${scale})`,
           borderRadius: `${borderRadius}px`,
         }}
       >
-        <img
-          src="/Team.jpg"
-          alt="Maganti Group Team"
-          className="w-full h-full object-cover animate-zoom-in"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/Technology_Looped_Background.mp4" type="video/mp4" />
+        </video>
         {/* Subtle dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/60 via-foreground/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/50 to-foreground/30" />
       </div>
 
       {/* Content overlay - text on the left */}
@@ -101,6 +106,29 @@ export function HeroSection() {
             >
               Learn More
             </Button>
+          </div>
+
+          {/* Social Media */}
+          <div className="flex items-center gap-4 mt-8 reveal opacity-0 animation-delay-500">
+            <span className="text-sm text-background/70">Follow us:</span>
+            <div className="flex gap-3">
+              <Link
+                href="https://www.facebook.com/Maganti-Group-LLC-1720121608231717/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background/20 flex items-center justify-center hover:bg-background/30 transition-colors"
+              >
+                <Facebook className="w-5 h-5 text-background" />
+              </Link>
+              <Link
+                href="https://linkedin.com/in/maganti-group-llc-we-serve-you-grow-96ba561a2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background/20 flex items-center justify-center hover:bg-background/30 transition-colors"
+              >
+                <Linkedin className="w-5 h-5 text-background" />
+              </Link>
+            </div>
           </div>
         </div>
 
