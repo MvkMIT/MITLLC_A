@@ -68,7 +68,8 @@ export function HeroSection() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/Technology_Looped_Background.mp4" type="video/mp4" />
+          {/* <source src="/Technology_Looped_Background.mp4" type="video/mp4" /> */}
+          <source src="/MG_LLC.mp4" type="video/mp4" />
         </video>
         {/* Subtle dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/50 to-foreground/30" />
@@ -95,6 +96,10 @@ export function HeroSection() {
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 text-base group"
+              onClick={() => {
+                const contactSection = document.getElementById('contact')
+                contactSection?.scrollIntoView({ behavior: 'smooth' })
+              }}
             >
               Get Started
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -103,6 +108,10 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               className="rounded-full px-8 py-6 text-base border-background/30 hover:bg-background/10 text-background bg-transparent backdrop-blur-sm"
+              onClick={() => {
+                const aboutSection = document.getElementById('about')
+                aboutSection?.scrollIntoView({ behavior: 'smooth' })
+              }}
             >
               Learn More
             </Button>

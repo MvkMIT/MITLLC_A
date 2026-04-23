@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Briefcase, Users, Clock, Award } from "lucide-react"
+import { Briefcase, Users, Clock, Award, Lightbulb } from "lucide-react"
 import { ScrollBlurText } from "./scroll-blur-text"
 
 const stats = [
@@ -95,15 +95,18 @@ export function ScienceSection() {
           alt="Technology background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-primary/90" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
-          <p className="reveal opacity-0 text-xs uppercase tracking-[0.3em] text-primary-foreground/60 font-medium mb-4">
-            Our Approach
-          </p>
+          <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-4">
+            <Lightbulb className="w-5 h-5 text-red-500" />
+            <p className="text-xs uppercase tracking-[0.3em] text-primary-foreground/60 font-medium">
+              Our Approach
+            </p>
+          </div>
           <ScrollBlurText
             text="Excellence in every engagement"
             className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-primary-foreground text-balance mb-6"

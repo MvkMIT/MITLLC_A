@@ -1,41 +1,44 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { MessageSquare } from "lucide-react"
 import { ScrollBlurText } from "./scroll-blur-text"
 
 const testimonials = [
   {
     quote:
-      "Maganti Group helped us scale our development team rapidly. Their candidates were highly skilled and integrated seamlessly into our workflow.",
-    author: "Sarah M.",
-    role: "CTO, Tech Startup",
-    avatar: "/placeholder.svg?height=80&width=80",
+      "I hold the greatest admiration for Sushma Maganti and the Maganti IT team, who directed and managed our collaboration to achieve major developments on the FUTEK Web Portal (RUMI).",
+    author: "Javad Mokhbery",
+    role: "FUTEK CEO",
+    avatar: "https://mitwebsiteartifacts.s3.amazonaws.com/images/events/091194a3-f4ea-418b-a14e-d23969e0ba1b/testimonial/766b3df9-ffb6-4a46-9384-d8e8d25a9e87.png",
   },
   {
     quote:
-      "The quality of talent Maganti Group provides is exceptional. They truly understand our technical requirements and company culture.",
-    author: "Michael R.",
-    role: "Engineering Director",
-    avatar: "/placeholder.svg?height=80&width=80",
+      "Thanks for the exceptional experience working with Maganti IT. As a new business owner, I found other companies overpriced or lacking quality. Maganti delivered a website I'm proud of, marketing support for visibility, and genuine staff support. My appreciation to the entire team!",
+    author: "Barbara Belicia",
+    role: "WholePerson Therapeutics LLC",
+    avatar: "https://mitwebsiteartifacts.s3.amazonaws.com/images/events/ad576506-0eb4-474a-9786-75461d0f6c69/testimonial/5d55d9bd-0a84-40d9-8540-0ada19adf56d.png",
   },
   {
     quote:
-      "Working with Maganti Group has transformed our IT operations. Their consultants brought expertise that accelerated our digital transformation.",
-    author: "Jennifer K.",
-    role: "VP of Operations",
-    avatar: "/placeholder.svg?height=80&width=80",
+      "Thank you for the rebrand work. The new website, logos and business cards have received excellent feedback. The mobile-enabled site with integrated CMS is a key marketing tool helping us compete. Maganti IT Resources LLC, Rocks!",
+    author: "Carlos Maldonado",
+    role: "C&R Yard Pro",
+    avatar: "https://mitwebsiteartifacts.s3.amazonaws.com/images/events/a8617aa3-018c-4107-8a43-da43412dfcf2/testimonial/8d2d270a-b6f2-45fb-ad8f-5d6530c2e559.png",
   },
   {
-    quote: "Reliable, professional, and efficient. Maganti Group is our go-to partner for all staffing needs.",
-    author: "David L.",
-    role: "HR Manager",
-    avatar: "/placeholder.svg?height=80&width=80",
+    quote:
+      "Maganti IT Resources did a fabulous job on my website at very reasonable fees. Throughout development, I received excellent guidance and support. They helped with my logo and advertising questions. I highly recommend them!",
+    author: "Candace J. Kosinski-CPA",
+    role: "Proprietor, CPA AuditPro 411",
+    avatar: "https://mitwebsiteartifacts.s3.amazonaws.com/images/events/1fe339d5-99b1-49d8-adb5-a7f41cc0198e/testimonial/069877cf-712d-466f-b324-3d7a74279ee1.png",
   },
   {
-    quote: "Their global presence and local expertise made all the difference in our international expansion.",
-    author: "Lisa T.",
-    role: "CEO, Financial Services",
-    avatar: "/placeholder.svg?height=80&width=80",
+    quote:
+      "I met Kamran Baig by chance when assigned to replace his windshield. He and the crew at MIT RESOURCE helped transform my vision into a thriving auto glass business. Their support has been invaluable.",
+    author: "Santos & The Ortega Family",
+    role: "Nexus AutoGlass CT",
+    avatar: "https://mitwebsiteartifacts.s3.amazonaws.com/images/events/93b5c980-814a-41d4-b396-75db216c47b1/testimonial/8005fe29-c63c-48b7-a81f-8a4d12ecae46.png",
   },
 ]
 
@@ -106,9 +109,12 @@ export function TestimonialsSection() {
       {/* Section Header */}
       <div className="w-full">
         <div className="text-center mb-16 lg:mb-20 px-6">
-          <p className="reveal opacity-0 text-sm uppercase tracking-[0.2em] text-secondary font-medium mb-4">
-            Testimonials
-          </p>
+          <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-4">
+            <MessageSquare className="w-5 h-5 text-primary" />
+            <p className="text-sm uppercase tracking-[0.2em] text-secondary font-medium">
+              Testimonials
+            </p>
+          </div>
           <ScrollBlurText
             text="Trusted by industry leaders"
             className="font-serif text-3xl md:text-4xl text-foreground text-balance lg:text-7xl font-light"

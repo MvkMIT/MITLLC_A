@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -14,20 +15,22 @@ export function Header() {
         <div className="flex items-center justify-between h-20 px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            
-            <span className="font-serif text-foreground text-2xl font-normal">Maganti Group LLC</span>
+            <Image src="/LOGO4.png" alt="Maganti Group LLC" width={200} height={200} className="h-40 w-auto -ml-6 mt-4 drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]" />
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
-            <Link href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="#industries" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Services
             </Link>
             <Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               About
             </Link>
-            <Link href="#expertise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Expertise
+            <Link href="#leadership" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Leadership
+            </Link>
+            <Link href="#mission" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Talent Solutions
             </Link>
             <Link href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Contact
@@ -36,9 +39,11 @@ export function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
-              Get Started
-            </Button>
+            <Link href="#jobs">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
+                Get Jobs
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -52,7 +57,7 @@ export function Header() {
           <div className="md:hidden py-6 px-6 lg:px-8 border-t border-border/50">
             <div className="flex flex-col gap-4">
               <Link
-                href="#services"
+                href="#industries"
                 className="text-lg text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -66,11 +71,18 @@ export function Header() {
                 About
               </Link>
               <Link
-                href="#expertise"
+                href="#leadership"
                 className="text-lg text-muted-foreground hover:text-foreground transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Expertise
+                Leadership
+              </Link>
+              <Link
+                href="#mission"
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Talent Solutions
               </Link>
               <Link
                 href="#contact"
@@ -79,9 +91,11 @@ export function Header() {
               >
                 Contact
               </Link>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-full mt-4">
-                Get Started
-              </Button>
+              <Link href="#jobs" onClick={() => setIsOpen(false)}>
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full w-full mt-4">
+                  Get Jobs
+                </Button>
+              </Link>
             </div>
           </div>
         )}

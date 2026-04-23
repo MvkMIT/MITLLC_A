@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Target } from "lucide-react"
 import { ScrollBlurText } from "@/components/scroll-blur-text"
 
 export function MissionSection() {
@@ -42,9 +42,12 @@ export function MissionSection() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Content */}
             <div>
-              <p className="reveal opacity-0 text-xs uppercase tracking-[0.3em] text-background/60 font-medium mb-4">
-                About Us
-              </p>
+              <div className="reveal opacity-0 flex items-center gap-2 mb-4">
+                <Target className="w-5 h-5 text-red-500" />
+                <p className="text-xs uppercase tracking-[0.3em] text-background/60 font-medium">
+                  Talent Solutions
+                </p>
+              </div>
               <ScrollBlurText
                 text="Transforming Businesses Through Technology"
                 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-background text-balance mb-6"

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Banknote, MonitorPlay, Users, ShoppingBag, Truck, Fuel } from "lucide-react"
+import { Banknote, MonitorPlay, Users, ShoppingBag, Truck, Fuel, Factory } from "lucide-react"
 import { ScrollBlurText } from "@/components/scroll-blur-text"
 
 const industries = [
@@ -77,9 +77,12 @@ export function IndustriesSection() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="reveal opacity-0 text-xs uppercase tracking-[0.3em] text-background/60 font-medium mb-4">
-            Industries We Serve
-          </p>
+          <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-4">
+            <Factory className="w-5 h-5 text-red-500" />
+            <p className="text-xs uppercase tracking-[0.3em] text-background/60 font-medium">
+              Industries We Serve
+            </p>
+          </div>
           <ScrollBlurText
             text="Solutions designed for you"
             className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-background text-balance mb-6"
