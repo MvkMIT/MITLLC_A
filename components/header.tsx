@@ -36,7 +36,7 @@ export function Header() {
     >
       <nav className="w-full bg-background/95 backdrop-blur-md border border-border/50 shadow-lg">
         <div className="flex items-center justify-between h-20 px-6 lg:px-8">
-          {/* Logo */}
+          {/* Logos */}
           <Link href="/" className="flex items-center gap-2">
             {/* <Image src="/LOGO4.png" alt="Maganti Group LLC" width={200} height={200} className="h-40 w-auto -ml-6 mt-4 drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]" /> */}
             <Image src="/LOGO6.png" alt="Maganti Group LLC" width={200} height={200} className="h-45 w-auto -ml-6 mt-4 drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]" /> 
