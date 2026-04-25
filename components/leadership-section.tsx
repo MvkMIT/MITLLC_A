@@ -23,7 +23,7 @@ const leadershipTeam = [
   {
     name: "Gita Poudel",
     role: "Director of Human Capital/Compliance",
-    image: "/leadership/Gita.jpg",
+    image: "/leadership/Gita.png",
     description: "Dedicated, self-motivated, and experienced Human Resource professional with an extensive background in employment and immigration laws. With over 17 years of experience, Gita proactively develops HR strategies to meet short and long-term business needs and manages strategies from conception to implementation by identifying areas of growth.",
     linkedin: "https://www.linkedin.com/in/gita-p-7558aa64/",
   },

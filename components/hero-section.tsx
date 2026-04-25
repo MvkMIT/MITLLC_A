@@ -83,7 +83,7 @@ export function HeroSection() {
             Welcome to Maganti Group
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.1] text-background text-balance mb-8 whitespace-nowrap">
-            <span className="inline"><AnimatedText text="Information Technology" delay={0.2} /></span>
+            <span className="inline"><AnimatedText text="Digital Innovation" delay={0.2} /></span>
             <br />
             <span className="text-accent inline">
               <AnimatedText text="Consulting" delay={0.6} />

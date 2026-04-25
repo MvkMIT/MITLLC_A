@@ -70,6 +70,10 @@ export function MissionSection() {
                 <Button
                   size="lg"
                   className="bg-background text-foreground hover:bg-background/90 rounded-full px-8 group"
+                  onClick={() => {
+                    const aboutSection = document.getElementById('about')
+                    aboutSection?.scrollIntoView({ behavior: 'smooth' })
+                  }}
                 >
                   Learn More
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
