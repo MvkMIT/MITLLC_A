@@ -1,11 +1,12 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Mail, MapPin, Phone, User, Building2, Send, MessageCircle, Globe, Clock } from "lucide-react"
+import { Mail, MapPin, Phone, User, Building2, Send, MessageCircle, Globe, Clock, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { ScrollBlurText } from "./scroll-blur-text"
+import { toast } from "sonner"
 
 const contactInfo = [
   {
@@ -40,6 +41,7 @@ export function ContactSection() {
     company: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,9 +61,42 @@ export function ContactSection() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("Please fill in all required fields")
+      return
+    }
+    
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      if (!response.ok) {
+        throw new Error("Failed to send message")
+      }
+      
+      toast.success("Message sent successfully! We'll get back to you soon.")
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+      })
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -194,10 +229,15 @@ export function ContactSection() {
 
                 <Button
                   type="submit"
-                  className="w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground py-4 font-semibold text-base flex items-center justify-center gap-2 group"
+                  disabled={isSubmitting}
+                  className="w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground py-4 font-semibold text-base flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  Send Message
+                  {isSubmitting ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  )}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { DM_Sans, Fraunces } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "@/components/ui/sonner"
 import "./globals.css"
 
 const dmSans = DM_Sans({
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.variable} ${fraunces.variable} font-sans antialiased`} suppressHydrationWarning>
         {children}
+        <Toaster position="top-right" />
         <Analytics />
       </body>
     </html>

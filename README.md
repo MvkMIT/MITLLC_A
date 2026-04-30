@@ -23,6 +23,9 @@ This is a Next.js 16 project built with React 19, TypeScript, and Tailwind CSS. 
 ```
 .
 ├── app/                    # Next.js App Router
+│   ├── api/               # API routes
+│   │   └── contact/       # Contact form endpoint
+│   │       └── route.ts   # POST handler with nodemailer
 │   ├── page.tsx           # Main landing page
 │   ├── layout.tsx         # Root layout with fonts
 │   └── globals.css        # Global styles & Tailwind
@@ -60,7 +63,7 @@ This is a Next.js 16 project built with React 19, TypeScript, and Tailwind CSS. 
 5. **Mission** - Company values and mission statement
 6. **Science** - Technology capabilities and approach
 7. **Testimonials** - Auto-scrolling client testimonials carousel with real client photos
-8. **Contact** - Contact form and company information
+8. **Contact** - Contact form with email integration (nodemailer) and company information
 9. **Footer** - Links and copyright
 
 ### UI Components (shadcn/ui)
@@ -82,6 +85,34 @@ This is a Next.js 16 project built with React 19, TypeScript, and Tailwind CSS. 
 - Auto-scrolling testimonials carousel
 - Framer Motion transitions
 - ScrollBlurText component for headings
+
+## API Routes
+
+### POST `/api/contact`
+
+Handles contact form submissions and sends emails via nodemailer (Gmail SMTP).
+
+**Request Body:**
+```json
+{
+  "name": "string (required)",
+  "email": "string (required)",
+  "phone": "string (optional)",
+  "company": "string (optional)",
+  "message": "string (required)"
+}
+```
+
+**Response:**
+- `200` - Email sent successfully
+- `400` - Missing required fields
+- `500` - Server error / Failed to send email
+
+**Features:**
+- HTML email template with styled table
+- Plain text fallback
+- Form validation
+- Toast notifications via sonner
 
 ## Real Client Testimonials
 
@@ -156,6 +187,8 @@ npm start
 | lucide-react | 0.454.0 | Icons |
 | @radix-ui/* | Latest | UI primitives |
 | zod | 3.25.76 | Validation |
+| nodemailer | latest | Email sending |
+| @types/nodemailer | latest | Type definitions |
 
 ## Design System
 
