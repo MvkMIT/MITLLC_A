@@ -82,15 +82,15 @@ export function HeroSection() {
           <p className="reveal opacity-0 text-sm uppercase tracking-[0.2em] text-background font-medium mb-6">
             Welcome to Maganti Group
           </p>
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium leading-[1.1] text-background text-balance mb-8 whitespace-nowrap">
-            <span className="inline"><AnimatedText text="Digital Innovation" delay={0.2} /></span>
+          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-[1.1] text-background text-balance mb-8 whitespace-nowrap">
+            <span className="inline"><AnimatedText text="Hire the Right IT Talent" delay={0.2} /></span>
             <br />
             <span className="text-accent inline">
-              <AnimatedText text="Consulting" delay={0.6} />
+              <AnimatedText text="for Future-Ready Organizations" delay={0.6} />
             </span>
           </h1>
-          <p className="reveal opacity-0 animation-delay-400 text-lg text-background/90 leading-relaxed mb-10 md:text-base mr-0 pr-0">
-            Our team brings experience, intelligence and innovation with leading technologies to help navigate and reinvest in your business and transform in a smart manner.
+          <p className="reveal opacity-0 animation-delay-400 text-base text-background/90 leading-relaxed mb-10 md:text-lg">
+            Maganti Group LLC helps businesses find skilled IT professionals for contract, full-time, and project-based roles. We support hiring needs with a reliable talent network, structured screening process, and a practical approach to matching the right people with the right opportunities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button

@@ -3,22 +3,24 @@ import { Mail, MapPin, Phone, Facebook, Linkedin } from "lucide-react"
 
 const footerLinks = {
   produits: [
-    { label: "Talent Acquisition", href: "#" },
-    { label: "Staff Augmentation", href: "#" },
-    { label: "Consulting", href: "#" },
-    { label: "All Services", href: "#" },
+    { label: "Contract Staffing", href: "#mission" },
+    { label: "Contract-to-Hire", href: "#mission" },
+    { label: "Direct / Permanent Placement", href: "#mission" },
+    { label: "RPO", href: "#mission" },
+    { label: "Enterprise Staffing", href: "#mission" },
+    { label: "Staff Augmentation", href: "#mission" },
   ],
   entreprise: [
     { label: "About Us", href: "#about" },
-    { label: "Leadership", href: "#about" },
+    { label: "Leadership", href: "#leadership" },
     { label: "Careers", href: "#jobs" },
     { label: "Contact", href: "#contact" },
   ],
   ressources: [
-    { label: "Blog", href: "#" },
-    { label: "FAQ", href: "#" },
-    { label: "Case Studies", href: "#" },
-    { label: "Press", href: "#" },
+    { label: "Industries", href: "#industries" },
+    { label: "Technologies", href: "#science" },
+    { label: "Testimonials", href: "#temoignages" },
+    { label: "Open Positions", href: "#jobs" },
   ],
 }
 

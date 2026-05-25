@@ -7,7 +7,7 @@ import { ScrollBlurText } from "./scroll-blur-text"
 const stats = [
   { icon: Briefcase, value: "500+", label: "Projects Delivered" },
   { icon: Users, value: "50+", label: "Expert Professionals" },
-  { icon: Clock, value: "15+", label: "Years Experience" },
+  { icon: Clock, value: "20+", label: "Years Experience" },
   { icon: Award, value: "98%", label: "Client Satisfaction" },
 ]
 
