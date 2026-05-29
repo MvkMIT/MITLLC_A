@@ -15,27 +15,31 @@ import {
 const services = [
   {
     title: "Contract Staffing",
-    description: "Need a specialist for 3 months? A team for a product launch? Contract staffing gives you access to pre-vetted IT professionals who can start quickly, without the overhead of permanent employment. We handle onboarding, payroll, compliance, and performance management, so you stay focused on delivery."
+    description: "Access skilled technology professionals quickly when timelines are tight or internal capacity is limited. Fill urgent skill gaps without the overhead of permanent hiring. Keep delivery moving while Maganti IT manages the staffing process."
   },
   {
     title: "Contract-to-Hire",
-    description: "Start with a contract engagement. Evaluate the candidate's skills, work ethic, and cultural fit in a real environment, then convert to permanent employment when you're confident. This model eliminates hiring risk for roles that matter most."
+    description: "Evaluate talent in a real work environment before making a permanent hiring decision. Reduce hiring risk by assessing skills, reliability, communication, and cultural fit on the job. Move to full-time employment with greater confidence when the fit is right."
   },
   {
-    title: "Direct / Permanent Placement",
-    description: "For roles that define your business, our retained and contingency search capabilities connect you with candidates who aren't applying to job boards, because the best talent rarely is. We run comprehensive searches, handle reference verification, and manage the full offer process."
+    title: "Direct Hire and Permanent Placement",
+    description: "Secure long-term technology talent for roles that are critical to growth and stability. Save recruiting time by connecting with qualified professionals who match your technical and business needs. Build stronger teams with candidates aligned to your goals and culture."
   },
   {
-    title: "RPO (Recruitment Process Outsourcing)",
-    description: "Hand us your entire hiring function, or just the parts you want to improve. Our RPO model embeds Maganti Group LLC recruiters within your organization, operating as a fully integrated talent acquisition team aligned to your processes, culture, and hiring KPIs."
+    title: "Project-Based Teams",
+    description: "Scale delivery without building every capability internally. Get the right mix of developers, engineers, analysts, project managers, and technology specialists for your project. Accelerate timelines while maintaining flexibility and control."
   },
   {
-    title: "Enterprise Staffing",
-    description: "Maganti Group LLC maintains India's deepest bench of certified SAP professionals from Basis and ABAP to FI/CO, MM, SD, and SuccessFactors. Whether you're running a large-scale SAP S/4HANA migration or need ongoing AMS support, we have the specialists who've done it before."
+    title: "Enterprise Technology Staffing",
+    description: "Find professionals who understand complex systems, large-scale environments, and mission-critical operations. Access talent across enterprise applications, cloud, data, cybersecurity, infrastructure, ERP, and digital transformation. Modernize platforms, improve system performance, and support business growth with the right expertise."
   },
   {
-    title: "Staff Augmentation",
-    description: "Plug skilled professionals directly into your existing team without changing your structure. Our staff augmentation model gives your teams the bandwidth they need for product development, cloud migrations, QA, data engineering, or cybersecurity, without the cost and delay of permanent hiring."
+    title: "Embedded Global Teams",
+    description: "Expand capacity with dedicated professionals who work as an extension of your internal workforce. Improve delivery speed and support ongoing technology needs while managing costs effectively. Keep collaboration consistent with teams aligned to your workflows, tools, and goals."
+  },
+  {
+    title: "Leadership and Executive Hiring",
+    description: "Find senior technology leaders who can guide transformation, growth, and long-term strategy. Strengthen decision-making with leaders who connect technology priorities to business outcomes. Build technology functions that support execution, innovation, and measurable results."
   }
 ]
 
