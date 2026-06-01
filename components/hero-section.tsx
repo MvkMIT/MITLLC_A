@@ -6,6 +6,9 @@ import { ArrowRight, Facebook, Linkedin } from "lucide-react"
 import { AnimatedText } from "@/components/animated-text"
 import Link from "next/link"
 
+// Public asset (served by URL — Next.js does not bundle .mp4 imports like images)
+const heroVideo = "/MG_LLC.mp4"
+
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const videoContainerRef = useRef<HTMLDivElement>(null)
@@ -69,45 +72,44 @@ export function HeroSection() {
           className="w-full h-full object-cover"
         >
           {/* <source src="/Technology_Looped_Background.mp4" type="video/mp4" /> */}
-          <source src="/MG_LLC.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
         {/* Subtle dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/50 to-foreground/30" />
       </div>
 
       {/* Content overlay - text on the left */}
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32 w-full">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32 w-full">
         <div className="max-w-2xl">
           {/* Text content */}
-          <p className="reveal opacity-0 text-sm uppercase tracking-[0.2em] text-background font-medium mb-6">
+          <p className="reveal opacity-0 text-xs sm:text-sm uppercase tracking-[0.2em] text-background font-medium mb-4 sm:mb-6">
             Welcome to Maganti Group
           </p>
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium leading-[1.1] text-background text-balance mb-8 whitespace-nowrap">
-            <span className="inline"><AnimatedText text="Hire the Right IT Talent" delay={0.2} /></span>
-            <br />
-            <span className="text-accent inline">
+          <h1 className="font-serif text-[20px] sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium leading-[1.2] text-background mb-6 sm:mb-8">
+            <span className="block whitespace-nowrap text-[26px] sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl"><AnimatedText text="Hire the Right IT Talent" delay={0.2} /></span>
+            <span className="text-accent block whitespace-nowrap">
               <AnimatedText text="for Future-Ready Organizations" delay={0.6} />
             </span>
           </h1>
-          <p className="reveal opacity-0 animation-delay-400 text-base text-background/90 leading-relaxed mb-10 md:text-lg">
+          <p className="reveal opacity-0 animation-delay-400 text-xs sm:text-sm md:text-base lg:text-lg text-background/90 leading-relaxed mb-6 sm:mb-8 md:mb-10">
             Maganti Group LLC helps businesses find skilled IT professionals for contract, full-time, and project-based roles. We support hiring needs with a reliable talent network, structured screening process, and a practical approach to matching the right people with the right opportunities.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 text-base group"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base group w-full sm:w-auto"
               onClick={() => {
                 const contactSection = document.getElementById('contact')
                 contactSection?.scrollIntoView({ behavior: 'smooth' })
               }}
             >
               Get Started
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full px-8 py-6 text-base border-background/30 hover:bg-background/10 text-background bg-transparent backdrop-blur-sm"
+              className="rounded-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base border-background/30 hover:bg-background/10 text-background bg-transparent backdrop-blur-sm w-full sm:w-auto"
               onClick={() => {
                 const aboutSection = document.getElementById('about')
                 aboutSection?.scrollIntoView({ behavior: 'smooth' })

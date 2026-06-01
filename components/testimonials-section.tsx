@@ -105,30 +105,30 @@ export function TestimonialsSection() {
   const duplicatedTestimonials = [...testimonials, ...testimonials]
 
   return (
-    <section ref={sectionRef} id="temoignages" className="py-24 bg-background overflow-hidden lg:py-32 lg:pb-0">
+    <section ref={sectionRef} id="temoignages" className="py-16 sm:py-24 bg-background overflow-hidden lg:py-32 lg:pb-0">
       {/* Section Header */}
       <div className="w-full">
-        <div className="text-center mb-16 lg:mb-20 px-6">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-6">
           <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-4">
             <MessageSquare className="w-5 h-5 text-primary" />
-            <p className="text-sm uppercase tracking-[0.2em] text-secondary font-medium">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-secondary font-medium">
               Testimonials
             </p>
           </div>
           <ScrollBlurText
             text="Trusted by industry leaders"
-            className="font-serif text-3xl md:text-4xl text-foreground text-balance lg:text-7xl font-light"
+            className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl text-foreground text-balance font-light"
           />
         </div>
 
         <div className="reveal opacity-0 animation-delay-400">
-          <div ref={scrollRef} className="flex gap-6 overflow-x-hidden" style={{ scrollBehavior: "auto" }}>
+          <div ref={scrollRef} className="flex gap-4 sm:gap-6 overflow-x-hidden px-4 sm:px-0" style={{ scrollBehavior: "auto" }}>
             {duplicatedTestimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[320px] md:w-[380px] bg-card rounded-2xl p-6 border border-border/50 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 my-6 py-10"
+                className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[380px] bg-card rounded-2xl p-5 sm:p-6 border border-border/50 shadow-lg shadow-primary/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 my-4 sm:my-6 py-8 sm:py-10"
               >
-                <blockquote className="font-serif text-base md:text-lg text-foreground leading-relaxed mb-6">
+                <blockquote className="font-serif text-sm sm:text-base md:text-lg text-foreground leading-relaxed mb-6">
                   "{testimonial.quote}"
                 </blockquote>
 

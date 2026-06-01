@@ -106,32 +106,32 @@ export function JobsSection() {
   }
 
   return (
-    <section ref={sectionRef} id="jobs" className="py-24 lg:py-32 bg-gradient-to-br from-muted/30 via-background to-primary/5">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section ref={sectionRef} id="jobs" className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-muted/30 via-background to-primary/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
-          <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-6">
-            <Briefcase className="w-6 h-6 text-primary" />
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground font-semibold">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-4 sm:mb-6">
+            <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-muted-foreground font-semibold">
               Join Our Team
             </p>
           </div>
           <ScrollBlurText
             text="Featured Opportunities"
-            className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance mb-8"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance mb-6 sm:mb-8"
           />
-          <p className="reveal opacity-0 animation-delay-200 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="reveal opacity-0 animation-delay-200 text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Build your career with Maganti Group. We're looking for talented individuals to join our growing team.
           </p>
-          <div className="reveal opacity-0 animation-delay-300 w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-8" />
+          <div className="reveal opacity-0 animation-delay-300 w-24 h-1 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6 sm:mt-8" />
         </div>
 
         {/* Job Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {featuredJobs.map((job, index) => (
             <div
               key={job.title}
-              className={`reveal opacity-0 ${index === 1 ? "animation-delay-100" : ""} group bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-border/30 shadow-lg hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden`}
+              className={`reveal opacity-0 ${index === 1 ? "animation-delay-100" : ""} group bg-card/50 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-border/30 shadow-lg hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden`}
             >
               {/* Background Pattern */}
               <div className="absolute inset-0">
@@ -139,15 +139,15 @@ export function JobsSection() {
               </div>
 
               {/* Featured Badge */}
-              <div className="absolute top-6 right-6">
-                <div className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+              <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
+                <div className="px-2.5 sm:px-3 py-1 bg-primary text-primary-foreground text-[10px] sm:text-xs font-semibold rounded-full">
                   Featured
                 </div>
               </div>
 
               <div className="relative z-10">
                 {/* Job Title */}
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4 pr-20 group-hover:text-primary transition-colors duration-300">
                   {job.title}
                 </h3>
 
@@ -177,15 +177,15 @@ export function JobsSection() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-4">
-                  <Button 
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <Button
                     onClick={() => setSelectedJob(job)}
-                    variant="outline" 
+                    variant="outline"
                     className="flex-1 rounded-xl border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
                   >
                     MORE DETAILS
                   </Button>
-                  <Button 
+                  <Button
                     onClick={() => handleApplyNow(job)}
                     className="flex-1 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground py-3 font-semibold group"
                   >
@@ -202,11 +202,11 @@ export function JobsSection() {
 
       {/* Job Details Modal */}
       {selectedJob && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
-          <div className="bg-card rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-scale-in [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-foreground/50 [&::-webkit-scrollbar-track]:bg-muted/100">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
+          <div className="bg-card rounded-2xl sm:rounded-3xl shadow-2xl max-w-2xl w-full max-h-[92vh] overflow-y-auto animate-scale-in [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-muted-foreground/50 [&::-webkit-scrollbar-track]:bg-muted/100">
             {/* Modal Header */}
-            <div className="sticky top-0 bg-card/95 backdrop-blur-sm border-b border-border/30 p-6 flex items-center justify-between">
-              <h2 className="font-serif text-2xl font-bold text-foreground">
+            <div className="sticky top-0 bg-card/95 backdrop-blur-sm border-b border-border/30 p-4 sm:p-6 flex items-center justify-between gap-3">
+              <h2 className="font-serif text-lg sm:text-2xl font-bold text-foreground line-clamp-2">
                 {showApplicationForm ? `Apply for ${selectedJob.title}` : selectedJob.title}
               </h2>
               <Button
@@ -224,7 +224,7 @@ export function JobsSection() {
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 space-y-6">
+            <div className="p-4 sm:p-6 space-y-6">
               {applicationSubmitted ? (
                 <div className="text-center py-12">
                   <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
@@ -304,7 +304,7 @@ export function JobsSection() {
                       />
                     </div>
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <Button
                       type="button"
                       variant="outline"

@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import logo from "@/public/LOGO6.png"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -35,11 +36,11 @@ export function Header() {
       style={{ transform: isVisible ? "translateY(0)" : "translateY(-100%)" }}
     >
       <nav className="w-full bg-background/95 backdrop-blur-md border border-border/50 shadow-lg">
-        <div className="flex items-center justify-between h-20 px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 lg:px-8">
           {/* Logos */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 shrink-0">
             {/* <Image src="/LOGO4.png" alt="Maganti Group LLC" width={200} height={200} className="h-40 w-auto -ml-6 mt-4 drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]" /> */}
-            <Image src="/LOGO6.png" alt="Maganti Group LLC" width={200} height={200} className="h-45 w-auto -ml-6 mt-4 drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]" /> 
+            <Image src={logo} alt="Maganti Group LLC" width={200} height={200} className="h-28 sm:h-36 lg:h-44 w-auto -ml-2 sm:-ml-4 lg:-ml-6 mt-2 sm:mt-3 lg:mt-4 drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]" />
             {/* <Image src="/LOGO5.png" alt="Maganti Group LLC" width={200} height={200} className="h-27 w-auto -ml-6 mt-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.9)]" /> */}
           </Link>
 
@@ -79,7 +80,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-6 px-6 lg:px-8 border-t border-border/50">
+          <div className="md:hidden py-6 px-4 sm:px-6 border-t border-border/50 max-h-[calc(100vh-4rem)] overflow-y-auto">
             <div className="flex flex-col gap-4">
               <Link
                 href="#industries"

@@ -26,31 +26,28 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background py-16 lg:py-16">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+    <footer className="bg-foreground text-background py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 sm:gap-12 lg:gap-8 mb-12 sm:mb-16">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full bg-background flex items-center justify-center">
-                <span className="text-foreground font-serif text-sm font-medium">M</span>
-              </div>
               <span className="font-serif text-xl font-medium text-background">Maganti Group</span>
             </Link>
-            <p className="text-background/70 leading-relaxed mb-6 max-w-sm">
+            <p className="text-background/70 leading-relaxed mb-6 max-w-sm text-sm sm:text-base">
               Empowering businesses worldwide through innovative technology solutions and strategic IT services.
             </p>
             <div className="space-y-3 text-sm text-background/70">
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4" />
-                <span>hr@magantigroupllc.com</span>
+              <div className="flex items-start gap-3">
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span className="break-all">hr@magantigroupllc.com</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 flex-shrink-0" />
                 <span>+1 (203)-490-0100</span>
               </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4" />
+              <div className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>21 State Street, Waterbury, CT 06702</span>
               </div>
             </div>
@@ -98,21 +95,21 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/50">
+        <div className="border-t border-background/10 pt-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+          <p className="text-xs sm:text-sm text-background/50 leading-relaxed">
             © Copyright 2026 All Rights Reserved. The Maganti Group is proud to be an Equal Opportunities / Affirmative Action Employer.
           </p>
-          <div className="flex items-center gap-6">
-            <div className="flex gap-6 text-sm text-background/50">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 w-full lg:w-auto">
+            <div className="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm text-background/50">
               <Link href="#" className="hover:text-background transition-colors">
                 Terms of Use
               </Link>
-              <span className="text-background/30">|</span>
+              <span className="text-background/30 hidden sm:inline">|</span>
               <Link href="#" className="hover:text-background transition-colors">
                 Privacy Policy
               </Link>
             </div>
-            <div className="flex gap-3 ml-4">
+            <div className="flex gap-3">
               <Link
                 href="https://www.facebook.com/Maganti-Group-LLC-1720121608231717/"
                 target="_blank"

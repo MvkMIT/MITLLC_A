@@ -100,31 +100,31 @@ export function ContactSection() {
   }
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
+    <section ref={sectionRef} id="contact" className="py-16 sm:py-24 lg:py-32 relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5">
       {/* Enhanced Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-accent/[0.03]" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 sm:w-80 h-64 sm:h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Section Header */}
-        <div className="text-center mb-20">
-          <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-6">
-            <MessageCircle className="w-6 h-6 text-primary" />
-            <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground font-semibold">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-4 sm:mb-6">
+            <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+            <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-muted-foreground font-semibold">
               Connect With Us
             </p>
           </div>
           <ScrollBlurText
             text="Let's Start a Conversation"
-            className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance mb-8"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground text-balance mb-6 sm:mb-8"
           />
-          <p className="reveal opacity-0 animation-delay-200 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="reveal opacity-0 animation-delay-200 text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We're here to help you transform your business with innovative technology solutions. Reach out to our team today.
           </p>
-          <div className="reveal opacity-0 animation-delay-300 flex items-center justify-center gap-8 mt-8">
+          <div className="reveal opacity-0 animation-delay-300 flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-6 sm:mt-8">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Clock className="w-4 h-4 text-primary" />
               <span>Quick Response</span>
@@ -137,7 +137,7 @@ export function ContactSection() {
         </div>
 
         {/* Enhanced Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {/* Left: Contact Info Cards */}
           <div className="space-y-6">
             {contactInfo.map((item, index) => (
@@ -173,10 +173,10 @@ export function ContactSection() {
 
           {/* Middle: Enhanced Contact Form */}
           <div className="reveal opacity-0 animation-delay-300">
-            <div className="bg-card/50 backdrop-blur-sm rounded-3xl p-8 border border-border/30 shadow-xl">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="bg-card/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-border/30 shadow-xl">
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-5 sm:mb-6">Send us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div className="relative">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                     <Input
@@ -198,7 +198,7 @@ export function ContactSection() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                   <div className="relative">
                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                     <Input
@@ -245,12 +245,12 @@ export function ContactSection() {
 
           {/* Right: Enhanced Map */}
           <div className="reveal opacity-0 animation-delay-400">
-            <div className="bg-card/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-border/30 shadow-xl">
-              <div className="p-6 border-b border-border/20">
-                <h3 className="font-serif text-xl font-bold text-foreground">Visit Our Office</h3>
+            <div className="bg-card/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden border border-border/30 shadow-xl">
+              <div className="p-5 sm:p-6 border-b border-border/20">
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground">Visit Our Office</h3>
                 <p className="text-sm text-muted-foreground mt-1">Waterbury, Connecticut</p>
               </div>
-              <div className="relative h-80">
+              <div className="relative h-64 sm:h-80">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9!2d-73.0413!3d41.5584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e7c4c6e8e8e8e8%3A0x8e8e8e8e8e8e8e8e!2s21+State+St%2C+Waterbury%2C+CT+06702!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"

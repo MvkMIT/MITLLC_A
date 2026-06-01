@@ -26,10 +26,10 @@ export function AboutSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="about" className="py-24 lg:py-32 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section ref={sectionRef} id="about" className="py-16 sm:py-24 lg:py-32 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="reveal opacity-0 flex items-center justify-center gap-2 mb-4">
             <BookOpen className="w-5 h-5 text-primary" />
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-medium">
@@ -38,9 +38,9 @@ export function AboutSection() {
           </div>
           <ScrollBlurText
             text="Our Story"
-            className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground text-balance mb-6"
+            className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground text-balance mb-6"
           />
-          <p className="reveal opacity-0 animation-delay-200 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="reveal opacity-0 animation-delay-200 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             IT Staffing Backed by Experience, Process, and Purpose
           </p>
           <div className="reveal opacity-0 animation-delay-300 w-16 h-0.5 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6" />
@@ -48,14 +48,14 @@ export function AboutSection() {
 
         {/* Story Content */}
         <div className="max-w-3xl mx-auto">
-          <div className="reveal opacity-0 animation-delay-400 space-y-6 text-muted-foreground leading-relaxed text-center">
-            <p className="text-lg">
+          <div className="reveal opacity-0 animation-delay-400 space-y-5 sm:space-y-6 text-muted-foreground leading-relaxed text-center">
+            <p className="text-base sm:text-lg">
               Maganti Group, LLC is a technology consulting and staffing solutions provider helping businesses access the right talent, expertise, and delivery support for their technology needs. Headquartered in Connecticut, USA, with major technology hubs in India, we serve clients across financial services, healthcare, banking, retail, telecom, and other growing industries.
             </p>
-            <p className="text-lg">
+            <p className="text-base sm:text-lg">
               We provide end-to-end talent solutions, including IT staffing, staff augmentation, technology consulting, and custom software support for large and mid-sized organizations. Our approach is built on quality, transparency, and a practical understanding of each client's business and technical requirements.
             </p>
-            <p className="text-foreground font-medium text-lg">
+            <p className="text-foreground font-medium text-base sm:text-lg">
               At Maganti Group, we believe successful partnerships are built through trust, consistency, and accountability. By putting our values into practice, we aim to create long-term value for our clients, employees, partners, and the communities we serve. Our goal is simple: help organizations build capable technology teams and move forward with confidence.
             </p>
           </div>

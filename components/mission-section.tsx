@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Target } from "lucide-react"
 import { ScrollBlurText } from "@/components/scroll-blur-text"
+import techSoftwaresBg from "@/public/TECH_SOFTWARES.png"
 import {
   Carousel,
   CarouselContent,
@@ -65,19 +66,19 @@ export function MissionSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="mission" className="py-24 lg:py-32 px-6">
-      <div className="relative max-w-7xl mx-auto rounded-[48px] overflow-hidden">
+    <section ref={sectionRef} id="mission" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
+      <div className="relative max-w-7xl mx-auto rounded-[28px] sm:rounded-[36px] lg:rounded-[48px] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src="/TECH_SOFTWARES.png" alt="Technology background" className="w-full h-full object-cover" />
+          <img src={techSoftwaresBg.src} alt="Technology background" className="w-full h-full object-cover" />
 
-          {/* Black shade on left side for text readability */}
-          <div className="absolute inset-y-0 left-0 w-full lg:w-2/3 bg-gradient-to-r from-foreground via-foreground/90 to-transparent" />
+          {/* Black shade for text readability — covers full width on mobile, left 2/3 on desktop */}
+          <div className="absolute inset-0 lg:inset-y-0 lg:left-0 lg:w-2/3 bg-gradient-to-r from-foreground via-foreground/90 to-foreground/80 lg:to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="relative px-8 lg:px-16 py-16 lg:py-24">
-          <div className="mb-12">
+        <div className="relative px-5 sm:px-8 lg:px-16 py-12 sm:py-16 lg:py-24">
+          <div className="mb-10 sm:mb-12">
             <div className="reveal opacity-0 flex items-center gap-2 mb-4">
               <Target className="w-5 h-5 text-red-500" />
               <p className="text-xs uppercase tracking-[0.3em] text-background/60 font-medium">
@@ -86,10 +87,10 @@ export function MissionSection() {
             </div>
             <ScrollBlurText
               text="Transforming Businesses Through Technology"
-              className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-background text-balance mb-6"
+              className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-background text-balance mb-6"
             />
             {/* Red accent line */}
-            <div className="reveal opacity-0 animation-delay-200 w-12 h-0.5 bg-red-500 mb-8" />
+            <div className="reveal opacity-0 animation-delay-200 w-12 h-0.5 bg-red-500 mb-6 sm:mb-8" />
           </div>
 
           <Carousel
@@ -101,16 +102,16 @@ export function MissionSection() {
           >
             <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="reveal opacity-0 p-6 bg-background/10 backdrop-blur-sm rounded-2xl border border-background/20 h-full">
-                    <h3 className="text-xl font-semibold text-background mb-4">{service.title}</h3>
-                    <p className="text-background/80 text-sm leading-relaxed">{service.description}</p>
+                <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                  <div className="reveal opacity-0 p-4 sm:p-5 md:p-6 bg-background/10 backdrop-blur-sm rounded-2xl border border-background/20 h-full">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-background mb-2 sm:mb-3 md:mb-4">{service.title}</h3>
+                    <p className="text-background/80 text-xs sm:text-sm leading-relaxed">{service.description}</p>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
+            <CarouselPrevious className="static md:absolute left-0 md:-left-12" />
+            <CarouselNext className="static md:absolute right-0 md:-right-12" />
           </Carousel>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { DM_Sans, Fraunces } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/sonner"
+// @ts-ignore: CSS module declarations are not present in this project config
 import "./globals.css"
 
 const dmSans = DM_Sans({
@@ -29,6 +30,12 @@ export const metadata: Metadata = {
     ],
     apple: "/MG.png",
   },
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({

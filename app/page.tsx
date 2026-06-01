@@ -20,7 +20,7 @@ export default function Home() {
       <IndustriesSection />
       <MissionSection />
       <ScienceSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <JobsSection />
       <ContactSection />
       <Footer />
