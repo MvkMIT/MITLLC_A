@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
 
     const mailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: "vkmachavarapu@mitresource.com",
+      to: "hr@mitresource.com",
       replyTo: email,
       subject: `New Inquiry from ${name} | Maganti Group, LLC`,
       html: `<!DOCTYPE html>
