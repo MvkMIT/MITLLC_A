@@ -1,14 +1,17 @@
 import Link from "next/link"
-import { Mail, MapPin, Phone, Facebook, Linkedin } from "lucide-react"
+import Image from "next/image"
+import { Mail, MapPin, Phone, Linkedin } from "lucide-react"
+import logo from "@/public/MG.png"
 
 const footerLinks = {
   produits: [
     { label: "Contract Staffing", href: "#mission" },
     { label: "Contract-to-Hire", href: "#mission" },
-    { label: "Direct / Permanent Placement", href: "#mission" },
-    { label: "RPO", href: "#mission" },
-    { label: "Enterprise Staffing", href: "#mission" },
-    { label: "Staff Augmentation", href: "#mission" },
+    { label: "Direct Hire and Permanent Placement", href: "#mission" },
+    { label: "Project-Based Teams", href: "#mission" },
+    { label: "Enterprise Technology Staffing", href: "#mission" },
+    { label: "Embedded Global Teams", href: "#mission" },
+    { label: "Leadership and Executive Hiring", href: "#mission" },
   ],
   entreprise: [
     { label: "About Us", href: "#about" },
@@ -32,10 +35,20 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
+              <Image src={logo} alt="Maganti Group logo" width={40} height={40} className="h-10 w-auto" />
               <span className="font-serif text-xl font-medium text-background">Maganti Group</span>
             </Link>
             <p className="text-background/70 leading-relaxed mb-6 max-w-sm text-sm sm:text-base">
-              Empowering businesses worldwide through innovative technology solutions and strategic IT services.
+              Empowering businesses worldwide through innovative technology solutions and strategic{" "}
+              <Link
+                href="https://mitresource.com/services/custom-software-development-services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-background/90"
+              >
+                IT services
+              </Link>
+              .
             </p>
             <div className="space-y-3 text-sm text-background/70">
               <div className="flex items-start gap-3">
@@ -111,15 +124,7 @@ export function Footer() {
             </div>
             <div className="flex gap-3">
               <Link
-                href="https://www.facebook.com/Maganti-Group-LLC-1720121608231717/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"
-              >
-                <Facebook className="w-4 h-4" />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/maganti-group-llc-we-serve-you-grow-96ba561a2"
+                href="https://www.linkedin.com/company/maganti-group-llc/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-background/20 transition-colors"

@@ -6,10 +6,12 @@ import { Users, Linkedin } from "lucide-react"
 import { ScrollBlurText } from "@/components/scroll-blur-text"
 import prasadImage from "@/public/leadership/prasad_ceo.png"
 import sushmaImage from "@/public/leadership/Sushma.jpg"
-import gitaImage from "@/public/leadership/Gita.png"
+import gitaImage from "@/public/leadership/Gita_Madam.jpg"
 import saiImage from "@/public/leadership/sai.jpg"
 import pavanImage from "@/public/leadership/pavan.jpg"
 
+// Leadership team data. Add/remove/reorder entries here to update the grid —
+// images are imported above and the cards render from this array in order.
 const leadershipTeam = [
   {
     name: "Prasad Maganti",
@@ -51,6 +53,7 @@ const leadershipTeam = [
 export function LeadershipSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
+  // Reveal-on-scroll: fade elements marked `.reveal` into view once they enter the viewport.
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -90,9 +93,10 @@ export function LeadershipSection() {
           <div className="reveal opacity-0 animation-delay-300 w-16 h-0.5 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mt-6" />
         </div>
 
-        {/* Leadership Grid */}
+        {/* Responsive card grid: 1 column on mobile, 2 on tablet, 3 on desktop */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {leadershipTeam.map((leader, index) => (
+            // `index` staggers the reveal animation so cards fade in one after another.
             <div
               key={leader.name}
               className={`reveal opacity-0 ${index === 0 ? "" : index === 1 ? "animation-delay-100" : index === 2 ? "animation-delay-200" : index === 3 ? "animation-delay-300" : "animation-delay-400"} group bg-gradient-to-br from-card via-card to-secondary/5 rounded-3xl overflow-hidden border border-border/30 shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-500 relative`}
@@ -133,7 +137,7 @@ export function LeadershipSection() {
                   {leader.role}
                 </p>
                 <div className="w-16 h-0.5 bg-gradient-to-r from-primary via-accent to-secondary mx-auto mb-4 opacity-60" />
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {leader.description}
                 </p>
               </div>

@@ -2,18 +2,20 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Facebook, Linkedin } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { AnimatedText } from "@/components/animated-text"
-import Link from "next/link"
 
-// Public asset (served by URL — Next.js does not bundle .mp4 imports like images)
-const heroVideo = "/MG_LLC.mp4"
+// Background video lives in /public and is referenced by URL.
+// (Next.js bundles imported images, but .mp4 files must be served as static assets.)
+const heroVideo = "/MG_LLC2.mp4"
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const videoContainerRef = useRef<HTMLDivElement>(null)
+  // 0 = top of page, 1 = scrolled past the hero. Drives the background zoom/round-corner effect.
   const [scrollProgress, setScrollProgress] = useState(0)
 
+  // Reveal-on-scroll: fade elements marked `.reveal` into view once they enter the viewport.
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -32,6 +34,7 @@ export function HeroSection() {
     return () => observer.disconnect()
   }, [])
 
+  // Track scroll position within the hero to animate the background video.
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return
@@ -39,23 +42,25 @@ export function HeroSection() {
       const scrollY = window.scrollY
       const sectionHeight = sectionRef.current.offsetHeight
 
-      // Calculate progress (0 to 1) based on scroll within the hero section
+      // Map scroll distance to a 0–1 range; reaches 1 at half the section's height.
       const progress = Math.min(scrollY / (sectionHeight * 0.5), 1)
       setScrollProgress(progress)
     }
 
+    // `passive` lets the browser scroll without waiting on this handler.
     window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll() // Initial check
+    handleScroll() // Sync state on mount in case the page loads already scrolled.
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scale = 1 - scrollProgress * 0.05 // Reduces from 1 to 0.95
-  const borderRadius = scrollProgress * 24 // Increases from 0 to 24px
+  // Derived transforms applied to the background video as the user scrolls.
+  const scale = 1 - scrollProgress * 0.05 // Zooms out slightly: 1 → 0.95
+  const borderRadius = scrollProgress * 24 // Rounds the corners: 0 → 24px
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden pt-20">
-      {/* Full-width background video with zoom effect */}
+      {/* Full-bleed background video; scale + border-radius are driven by scroll progress */}
       <div
         ref={videoContainerRef}
         className="absolute inset-0 w-full h-full overflow-hidden transition-transform duration-100"
@@ -71,17 +76,16 @@ export function HeroSection() {
           playsInline
           className="w-full h-full object-cover"
         >
-          {/* <source src="/Technology_Looped_Background.mp4" type="video/mp4" /> */}
           <source src={heroVideo} type="video/mp4" />
         </video>
         {/* Subtle dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/50 to-foreground/30" />
       </div>
 
-      {/* Content overlay - text on the left */}
+      {/* Foreground content, left-aligned over the video */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32 w-full">
         <div className="max-w-2xl">
-          {/* Text content */}
+          {/* Eyebrow + animated headline + supporting copy */}
           <p className="reveal opacity-0 text-xs sm:text-sm uppercase tracking-[0.2em] text-background font-medium mb-4 sm:mb-6">
             Welcome to Maganti Group
           </p>
@@ -118,32 +122,7 @@ export function HeroSection() {
               Learn More
             </Button>
           </div>
-
-          {/* Social Media */}
-          <div className="flex items-center gap-4 mt-8 reveal opacity-0 animation-delay-500">
-            <span className="text-sm text-background/70">Follow us:</span>
-            <div className="flex gap-3">
-              <Link
-                href="https://www.facebook.com/Maganti-Group-LLC-1720121608231717/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/20 flex items-center justify-center hover:bg-background/30 transition-colors"
-              >
-                <Facebook className="w-5 h-5 text-background" />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/maganti-group-llc-we-serve-you-grow-96ba561a2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/20 flex items-center justify-center hover:bg-background/30 transition-colors"
-              >
-                <Linkedin className="w-5 h-5 text-background" />
-              </Link>
-            </div>
-          </div>
         </div>
-
-        {/* Floating card - bottom left */}
       </div>
     </section>
   )
